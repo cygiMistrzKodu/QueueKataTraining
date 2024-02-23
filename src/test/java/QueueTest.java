@@ -50,4 +50,40 @@ public class QueueTest {
 
         assertEquals(0, queue.remove());
     }
+
+    @Test
+    void add3ElementsRemove2timesQueueSizeIs1() {
+        queue.add(3);
+        queue.add(4);
+        queue.add(7);
+        queue.remove();
+
+        assertEquals(4, queue.remove());
+        assertEquals(1,queue.size());
+    }
+
+    @Test
+    void ifAddMoreElementThanQueueSizeLastElementMoveOnFront() {
+
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
+        queue.add(5);
+        queue.add(6);
+        queue.add(7);
+
+        assertEquals(7, queue.remove());
+    }
+
+    @Test
+    void addOneRemoveOneAddTwoRemoveOne() {
+       queue.add(1);
+       queue.remove();
+       queue.add(3);
+       queue.add(4);
+
+       assertEquals(3,queue.remove());
+    }
+
 }

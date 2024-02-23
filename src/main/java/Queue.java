@@ -4,13 +4,20 @@ public class Queue {
 
     private int removeIndex;
 
-    private int element[] = new int[6];
+    private int elements[] = new int[6];
+
     public boolean isEmpty() {
         return addIndex == 0;
     }
 
     public void add(int element) {
-        this.element[addIndex++] = element;
+
+        if (addIndex >= elements.length) {
+            addIndex = 0;
+        }
+
+        this.elements[addIndex++] = element;
+        removeIndex = 0;
 
     }
 
@@ -20,7 +27,7 @@ public class Queue {
 
     public int remove() {
         addIndex--;
-        return element[removeIndex++];
+        return elements[removeIndex++];
 
     }
 }
