@@ -4,7 +4,7 @@ public class Queue {
 
     private int removeIndex;
 
-    private int element[] = new int[2];
+    private int element[] = new int[6];
     public boolean isEmpty() {
         return addIndex == 0;
     }
@@ -15,7 +15,7 @@ public class Queue {
     }
 
     public int size() {
-        return element.length;
+        return addIndex;
     }
 
     public int remove() {
