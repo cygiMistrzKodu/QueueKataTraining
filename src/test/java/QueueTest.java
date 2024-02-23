@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class QueueTest {
@@ -16,23 +17,37 @@ public class QueueTest {
     @Test
     public void canAddElementToQueue() {
         queue.add(0);
-        assertEquals(1,queue.size());
+        assertFalse(queue.isEmpty());
     }
 
     @Test
-    public void addTwoElementsSizeIs2(){
+    public void addTwoElementsSizeIs2() {
         queue.add(0);
         queue.add(1);
-        assertEquals(2,queue.size());
+        assertEquals(2, queue.size());
     }
 
     @Test
-    void addTwoElementAndRemoveTwoAndIsEmpty() {
+    void addTwoElementAndRemoveTwoAndQueueIsEmpty() {
         queue.add(0);
         queue.add(1);
         queue.remove();
         queue.remove();
-        assertEquals(0,queue.size());
+        assertTrue(queue.isEmpty());
 
     }
-  }
+
+    @Test
+    void addOneElementAndRemoveReturnThisElement() {
+        queue.add(4);
+        assertEquals(4, queue.remove());
+    }
+
+    @Test
+    void addTwoElementsOnOneRemoveReturnFirst() {
+        queue.add(0);
+        queue.add(1);
+
+        assertEquals(0, queue.remove());
+    }
+}

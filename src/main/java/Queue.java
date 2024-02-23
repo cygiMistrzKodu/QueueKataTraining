@@ -1,20 +1,26 @@
 public class Queue {
 
-    private int size;
+    private int addIndex;
+
+    private int removeIndex;
+
+    private int element[] = new int[2];
     public boolean isEmpty() {
-        return true;
+        return addIndex == 0;
     }
 
     public void add(int element) {
-        size++;
+        this.element[addIndex++] = element;
 
     }
 
     public int size() {
-        return size;
+        return element.length;
     }
 
     public int remove() {
-        return size--;
+        addIndex--;
+        return element[removeIndex++];
+
     }
 }
