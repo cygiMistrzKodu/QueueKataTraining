@@ -86,4 +86,34 @@ public class QueueTest {
        assertEquals(3,queue.remove());
     }
 
+    @Test
+    void whenRemovePassMaxCapacityItMoveOnStartOfQueue() {
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+
+        assertEquals(0,queue.remove());
+    }
+
+    @Test
+    void whenRemovePassMaxCapacityAndAdElementThenThisElementIsRemoved() {
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.add(8);
+
+        assertEquals(8,queue.remove());
+    }
+
+
 }

@@ -26,7 +26,18 @@ public class Queue {
     }
 
     public int remove() {
-        addIndex--;
+
+        if (addIndex <= 0) {
+            addIndex = 0;
+        } else {
+
+            addIndex--;
+        }
+
+        if (removeIndex >= elements.length) {
+            removeIndex = 0;
+        }
+
         return elements[removeIndex++];
 
     }
