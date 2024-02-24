@@ -115,5 +115,21 @@ public class QueueTest {
         assertEquals(8,queue.remove());
     }
 
+    @Test
+    void addMoreElementsThanCapacityThenQueueRestart() {
+        queue.add(4);
+        queue.remove();
+        queue.remove();
+        queue.add(8);
+        queue.add(9);
+        queue.add(10);
+        queue.add(11);
+        queue.add(12);
+        queue.add(13);
+        queue.add(14);
+        queue.add(15);
+        queue.add(16);
 
+        assertEquals(14,queue.remove());
+    }
 }
