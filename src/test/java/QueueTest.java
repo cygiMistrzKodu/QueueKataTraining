@@ -97,7 +97,7 @@ public class QueueTest {
         queue.remove();
         queue.remove();
 
-        assertEquals(0,queue.remove());
+        assertEquals(-1,queue.remove());
     }
 
     @Test
@@ -131,5 +131,13 @@ public class QueueTest {
         queue.add(16);
 
         assertEquals(14,queue.remove());
+        assertEquals(15,queue.remove());
+        assertEquals(16,queue.remove());
+        assertEquals(11,queue.remove());
+        assertEquals(12,queue.remove());
+        assertEquals(13,queue.remove());
+        assertEquals(-1,queue.remove());
+
+
     }
 }

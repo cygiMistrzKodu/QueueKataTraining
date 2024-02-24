@@ -38,7 +38,10 @@ public class Queue {
             removeIndex = 0;
         }
 
-        return elements[removeIndex++];
+        int  removedElement = elements[removeIndex++];
+        this.elements[removeIndex-1] = -1;
+
+        return removedElement;
 
     }
 }
