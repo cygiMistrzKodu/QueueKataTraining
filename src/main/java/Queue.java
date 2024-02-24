@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Queue {
 
     private int addIndex;
@@ -5,6 +7,10 @@ public class Queue {
     private int removeIndex;
 
     private int elements[] = new int[6];
+
+    public Queue() {
+        Arrays.fill(this.elements,-1);
+    }
 
     public boolean isEmpty() {
         return addIndex == 0;

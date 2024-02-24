@@ -140,4 +140,26 @@ public class QueueTest {
 
 
     }
+
+    @Test
+    void removeElementIsSymbolByMinus1IfStartFromBeginAgain() {
+
+        queue.add(0);
+        queue.add(1);
+        queue.add(2);
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+        queue.remove();
+
+        assertEquals(-1,queue.remove());
+
+    }
+
+    @Test
+    void queueStartWithMinus1Values() {
+        assertEquals(-1,queue.remove());
+    }
 }
